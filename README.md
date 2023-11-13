@@ -99,14 +99,6 @@ class User extends Model
 composer test
 ```
 
-## Credits
-
-- [Laravel](https://laravel.com)
-- [Tailwind](https://tailwindcss.com/)
-- [Livewire](https://laravel-livewire.com/)
-- [FlowBite](https://flowbite.com)
-- [commentify](https://github.com/usamamuneerchaudhary/commentify/)
-
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
@@ -121,6 +113,11 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
+- [Laravel](https://laravel.com)
+- [Tailwind](https://tailwindcss.com/)
+- [Livewire](https://laravel-livewire.com/)
+- [FlowBite](https://flowbite.com)
+- [commentify](https://github.com/usamamuneerchaudhary/commentify/)
 - [centrex](https://github.com/centrex)
 - [All Contributors](../../contributors)
 
