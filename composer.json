@@ -1,25 +1,26 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "centrexbd/livewire-comments",
+    "description": "Manege comments with livewire in laravel",
     "keywords": [
-        ":vendor_name",
+        "centrexbd",
         "laravel",
-        ":package_slug"
+        "livewire-comments"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/centrexbd/livewire-comments",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "centrexbd",
+            "email": "raisul.me@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.0|^8.1",
-        "illuminate/database": "^9.0|^10.0",
-        "illuminate/support": "^9.0|^10.0"
+        "php": "^8.1",
+        "illuminate/database": "*",
+        "illuminate/support": "*",
+        "livewire/livewire": "^3.0"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -36,19 +37,19 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Centrexbd\\LivewireComments\\": "src/",
+            "Centrexbd\\LivewireComments\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "Centrexbd\\LivewireComments\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
     "scripts": {
         "post-autoload-dump": "@composer run prepare",
-        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "clear": "@php vendor/bin/testbench package:purge-livewire-comments --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": [
             "@composer run prepare",
@@ -74,10 +75,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Centrexbd\\LivewireComments\\LivewireCommentsServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LivewireComments": "Centrexbd\\LivewireComments\\Facades\\LivewireComments"
             }
         }
     },
