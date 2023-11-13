@@ -1,6 +1,6 @@
 <?php
 
-namespace Centrexbd\LivewireComments\Traits;
+namespace Centrex\LivewireComments\Traits;
 
 trait HasUserAvatar
 {

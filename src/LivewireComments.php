@@ -1,6 +1,6 @@
 <?php
 
-namespace Centrexbd\LivewireComments;
+namespace Centrex\LivewireComments;
 
 class LivewireComments
 {

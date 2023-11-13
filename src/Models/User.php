@@ -1,11 +1,11 @@
 <?php
 
-namespace Centrexbd\LivewireComments\Models;
+namespace Centrex\LivewireComments\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as BaseUser;
-use Centrexbd\LivewireComments\Database\Factories\UserFactory;
-use Centrexbd\LivewireComments\Traits\HasUserAvatar;
+use Centrex\LivewireComments\Database\Factories\UserFactory;
+use Centrex\LivewireComments\Traits\HasUserAvatar;
 
 class User extends BaseUser
 {

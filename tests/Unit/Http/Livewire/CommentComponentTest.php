@@ -2,10 +2,10 @@
 
 use Illuminate\Contracts\View\View;
 use Livewire\Livewire;
-use Centrexbd\LivewireComments\Http\Livewire\Comments;
-use Centrexbd\LivewireComments\Models\Comment;
-use Centrexbd\LivewireComments\Http\Livewire\Comment as LivewireComment;
-use Centrexbd\LivewireComments\Models\User;
+use Centrex\LivewireComments\Http\Livewire\Comments;
+use Centrex\LivewireComments\Models\Comment;
+use Centrex\LivewireComments\Http\Livewire\Comment as LivewireComment;
+use Centrex\LivewireComments\Models\User;
 
 class CommentComponentTest extends TestCase
 {
@@ -40,7 +40,7 @@ class CommentComponentTest extends TestCase
     public function it_can_edit_a_comment()
     {
         $this->actingAs($this->user);
-        Livewire::test(\Centrexbd\LivewireComments\Http\Livewire\Comments::class, [
+        Livewire::test(\Centrex\LivewireComments\Http\Livewire\Comments::class, [
             'model' => $this->article
         ])
             ->set('newCommentState.body', $this->comment->body)

@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Eloquent\Model;
-use Centrexbd\LivewireComments\Scopes\CommentScopes;
+use Centrex\LivewireComments\Scopes\CommentScopes;
 
 class ArticleStub extends Model
 {
-    use \Centrexbd\LivewireComments\Traits\Commentable;
+    use \Centrex\LivewireComments\Traits\Commentable;
 
     protected $connection = 'testbench';
 

@@ -1,9 +1,9 @@
 <?php
 
-use Centrexbd\LivewireComments\Models\Presenters\CommentPresenter;
-use Centrexbd\LivewireComments\Models\Comment;
+use Centrex\LivewireComments\Models\Presenters\CommentPresenter;
+use Centrex\LivewireComments\Models\Comment;
 use Illuminate\Support\HtmlString;
-use Centrexbd\LivewireComments\Models\User;
+use Centrex\LivewireComments\Models\User;
 
 class CommentPresenterTest extends TestCase
 {

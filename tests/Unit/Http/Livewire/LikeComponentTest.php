@@ -1,8 +1,8 @@
 <?php
 
 use Livewire\Livewire;
-use Centrexbd\LivewireComments\Http\Livewire\Like;
-use Centrexbd\LivewireComments\Models\User;
+use Centrex\LivewireComments\Http\Livewire\Like;
+use Centrex\LivewireComments\Models\User;
 
 class LikeComponentTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Centrexbd\LivewireComments\Http\Livewire;
+namespace Centrex\LivewireComments\Http\Livewire;
 
 
 use Illuminate\Auth\Access\AuthorizationException;
@@ -11,7 +11,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Str;
 use Livewire\Attributes\On;
 use Livewire\Component;
-use Centrexbd\LivewireComments\Models\User;
+use Centrex\LivewireComments\Models\User;
 
 class Comment extends Component
 {

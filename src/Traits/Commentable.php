@@ -1,9 +1,9 @@
 <?php
 
-namespace Centrexbd\LivewireComments\Traits;
+namespace Centrex\LivewireComments\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Centrexbd\LivewireComments\Models\Comment;
+use Centrex\LivewireComments\Models\Comment;
 
 trait Commentable
 {

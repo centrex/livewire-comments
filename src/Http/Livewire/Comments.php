@@ -1,6 +1,6 @@
 <?php
 
-namespace Centrexbd\LivewireComments\Http\Livewire;
+namespace Centrex\LivewireComments\Http\Livewire;
 
 
 use Illuminate\Contracts\View\Factory;

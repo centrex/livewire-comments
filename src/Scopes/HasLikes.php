@@ -1,10 +1,10 @@
 <?php
 
-namespace Centrexbd\LivewireComments\Scopes;
+namespace Centrex\LivewireComments\Scopes;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Centrexbd\LivewireComments\Models\CommentLike;
-use Centrexbd\LivewireComments\Models\User;
+use Centrex\LivewireComments\Models\CommentLike;
+use Centrex\LivewireComments\Models\User;
 
 trait HasLikes
 {

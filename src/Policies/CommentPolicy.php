@@ -1,10 +1,10 @@
 <?php
 
-namespace Centrexbd\LivewireComments\Policies;
+namespace Centrex\LivewireComments\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Auth\Access\Response;
-use Centrexbd\LivewireComments\Models\Comment;
+use Centrex\LivewireComments\Models\Comment;
 
 class CommentPolicy
 {

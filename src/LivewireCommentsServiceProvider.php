@@ -1,6 +1,6 @@
 <?php
 
-namespace Centrexbd\LivewireComments;
+namespace Centrex\LivewireComments;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -64,7 +64,7 @@ class LivewireCommentsServiceProvider extends ServiceProvider
             return new CommentPolicy;
         });
 
-        Gate::policy(\Centrexbd\LivewireComments\Models\Comment::class, CommentPolicy::class);
+        Gate::policy(\Centrex\LivewireComments\Models\Comment::class, CommentPolicy::class);
         
         // Register the main class to use with the facade
         $this->app->singleton('livewire-comments', function () {

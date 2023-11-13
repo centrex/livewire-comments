@@ -1,6 +1,6 @@
 <?php
 
-namespace Centrexbd\LivewireComments\Http\Livewire;
+namespace Centrex\LivewireComments\Http\Livewire;
 
 
 use Illuminate\Contracts\View\Factory;
@@ -15,7 +15,7 @@ class Like extends Component
     public $count;
 
 
-    public function mount(\Centrexbd\LivewireComments\Models\Comment $comment): void
+    public function mount(\Centrex\LivewireComments\Models\Comment $comment): void
     {
         $this->comment = $comment;
         $this->count = $comment->likes_count;

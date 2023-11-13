@@ -1,11 +1,11 @@
 <?php
 
-namespace Centrexbd\LivewireComments\Database\Factories;
+namespace Centrex\LivewireComments\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use Centrexbd\LivewireComments\Models\Comment;
-use Centrexbd\LivewireComments\Models\User;
+use Centrex\LivewireComments\Models\Comment;
+use Centrex\LivewireComments\Models\User;
 
 
 class CommentFactory extends Factory

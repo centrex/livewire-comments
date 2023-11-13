@@ -1,9 +1,9 @@
 <?php
 
 use Livewire\Livewire;
-use Centrexbd\LivewireComments\Models\Comment;
-use Centrexbd\LivewireComments\Http\Livewire\Comments;
-use Centrexbd\LivewireComments\Models\User;
+use Centrex\LivewireComments\Models\Comment;
+use Centrex\LivewireComments\Http\Livewire\Comments;
+use Centrex\LivewireComments\Models\User;
 
 class CommentsComponentTest extends TestCase
 {

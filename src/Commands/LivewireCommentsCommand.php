@@ -1,6 +1,6 @@
 <?php
 
-namespace Centrexbd\LivewireComments\Commands;
+namespace Centrex\LivewireComments\Commands;
 
 use Illuminate\Console\Command;
 

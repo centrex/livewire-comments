@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
 use Livewire\LivewireServiceProvider;
-use Centrexbd\LivewireComments\Providers\CommentifyServiceProvider;
+use Centrex\LivewireComments\Providers\CommentifyServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {

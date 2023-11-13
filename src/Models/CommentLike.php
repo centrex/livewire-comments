@@ -1,6 +1,6 @@
 <?php
 
-namespace Centrexbd\LivewireComments\Models;
+namespace Centrex\LivewireComments\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Centrexbd\LivewireComments\Database\Factories\CommentFactory;
-use Centrexbd\LivewireComments\Models\Presenters\CommentPresenter;
-use Centrexbd\LivewireComments\Scopes\CommentScopes;
+use Centrex\LivewireComments\Database\Factories\CommentFactory;
+use Centrex\LivewireComments\Models\Presenters\CommentPresenter;
+use Centrex\LivewireComments\Scopes\CommentScopes;
 
 class CommentLike extends Model
 {

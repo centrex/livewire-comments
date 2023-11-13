@@ -1,6 +1,6 @@
 <?php
 
-namespace Centrexbd\LivewireComments\Scopes;
+namespace Centrex\LivewireComments\Scopes;
 
 
 use Illuminate\Database\Eloquent\Builder;

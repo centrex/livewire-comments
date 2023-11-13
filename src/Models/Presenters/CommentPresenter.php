@@ -1,10 +1,10 @@
 <?php
 
-namespace Centrexbd\LivewireComments\Models\Presenters;
+namespace Centrex\LivewireComments\Models\Presenters;
 
 use Illuminate\Support\HtmlString;
-use Centrexbd\LivewireComments\Models\Comment;
-use Centrexbd\LivewireComments\Models\User;
+use Centrex\LivewireComments\Models\Comment;
+use Centrex\LivewireComments\Models\User;
 
 class CommentPresenter
 {

@@ -1,7 +1,7 @@
 <?php
 
-use Centrexbd\LivewireComments\Models\Comment;
-use Centrexbd\LivewireComments\Models\User;
+use Centrex\LivewireComments\Models\Comment;
+use Centrex\LivewireComments\Models\User;
 
 class CommentTest extends TestCase
 {

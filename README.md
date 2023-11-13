@@ -1,9 +1,9 @@
 # Manege comments with livewire in laravel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/centrexbd/livewire-comments.svg?style=flat-square)](https://packagist.org/packages/centrexbd/livewire-comments)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/centrexbd/livewire-comments/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/centrexbd/livewire-comments/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/centrexbd/livewire-comments/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/centrexbd/livewire-comments/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/centrexbd/livewire-comments.svg?style=flat-square)](https://packagist.org/packages/centrexbd/livewire-comments)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/centrex/livewire-comments.svg?style=flat-square)](https://packagist.org/packages/centrex/livewire-comments)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/centrex/livewire-comments/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/centrex/livewire-comments/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/centrex/livewire-comments/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/centrex/livewire-comments/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/centrex/livewire-comments.svg?style=flat-square)](https://packagist.org/packages/centrex/livewire-comments)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
@@ -32,7 +32,7 @@ This is where your description should go. Limit it to a paragraph or two. Consid
 You can install the package via composer:
 
 ```bash
-composer require centrexbd/livewire-comments
+composer require centrex/livewire-comments
 ```
 
 You can publish and run the migrations with:
@@ -68,7 +68,7 @@ php artisan vendor:publish --tag="comments-tailwind-config"
 In your model, where you want to integrate comments, simply add the `Commentable` trait in that model.
 For example: 
 ```php
-use Centrexbd\LivewireComments\Traits\Commentable;
+use Centrex\LivewireComments\Traits\Commentable;
 
 class Article extends Model
 {
@@ -84,7 +84,7 @@ php`. We can add the following code:
 
 #### Additionally, add the `HasUserAvatar` trait in `App\Models\User`, to use avatars:
 ```php
-use Centrexbd\LivewireComments\Traits\HasUserAvatar;
+use Centrex\LivewireComments\Traits\HasUserAvatar;
 
 class User extends Model
 {
@@ -120,7 +120,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [centrexbd](https://github.com/centrexbd)
+- [centrex](https://github.com/centrex)
 - [All Contributors](../../contributors)
 
 ## License

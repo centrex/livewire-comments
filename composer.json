@@ -1,17 +1,17 @@
 {
-    "name": "centrexbd/livewire-comments",
+    "name": "centrex/livewire-comments",
     "description": "Manege comments with livewire in laravel",
     "keywords": [
-        "centrexbd",
+        "centrex",
         "laravel",
         "livewire-comments"
     ],
-    "homepage": "https://github.com/centrexbd/livewire-comments",
+    "homepage": "https://github.com/centrex/livewire-comments",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
-            "name": "centrexbd",
+            "name": "centrex",
             "email": "raisul.me@gmail.com",
             "role": "Developer"
         }
@@ -37,13 +37,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Centrexbd\\LivewireComments\\": "src/",
-            "Centrexbd\\LivewireComments\\Database\\Factories\\": "database/factories/"
+            "Centrex\\LivewireComments\\": "src/",
+            "Centrex\\LivewireComments\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Centrexbd\\LivewireComments\\Tests\\": "tests/",
+            "Centrex\\LivewireComments\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -75,10 +75,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Centrexbd\\LivewireComments\\LivewireCommentsServiceProvider"
+                "Centrex\\LivewireComments\\LivewireCommentsServiceProvider"
             ],
             "aliases": {
-                "LivewireComments": "Centrexbd\\LivewireComments\\Facades\\LivewireComments"
+                "LivewireComments": "Centrex\\LivewireComments\\Facades\\LivewireComments"
             }
         }
     },

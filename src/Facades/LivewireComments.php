@@ -1,16 +1,16 @@
 <?php
 
-namespace Centrexbd\LivewireComments\Facades;
+namespace Centrex\LivewireComments\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Centrexbd\LivewireComments\LivewireComments
+ * @see \Centrex\LivewireComments\LivewireComments
  */
 class LivewireComments extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \Centrexbd\LivewireComments\LivewireComments::class;
+        return \Centrex\LivewireComments\LivewireComments::class;
     }
 }
