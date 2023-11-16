@@ -89,7 +89,7 @@ class Comment extends Component
     public function render(
     ): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application|null
     {
-        return view('commentify::livewire.comment');
+        return view('livewire-comments::livewire.comment');
     }
 
     /**

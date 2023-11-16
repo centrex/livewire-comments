@@ -3,6 +3,7 @@
 namespace Centrex\LivewireComments;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Gate;
 
 class LivewireCommentsServiceProvider extends ServiceProvider
 {
