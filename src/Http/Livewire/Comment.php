@@ -52,9 +52,7 @@ class Comment extends Component
         ];
     }
 
-    /**
-     * @throws \Illuminate\Auth\Access\AuthorizationException
-     */
+    /** @throws \Illuminate\Auth\Access\AuthorizationException */
     public function editComment(): void
     {
         $this->authorize('update', $this->comment);
@@ -66,9 +64,7 @@ class Comment extends Component
         $this->showOptions = false;
     }
 
-    /**
-     * @throws AuthorizationException
-     */
+    /** @throws AuthorizationException */
     public function deleteComment(): void
     {
         $this->authorize('destroy', $this->comment);

@@ -9,9 +9,7 @@ use Livewire\LivewireServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
-    /**
-     * @return string[]
-     */
+    /** @return string[] */
     protected function getPackageProviders($app): array
     {
         return [
