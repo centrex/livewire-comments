@@ -1,15 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Centrex\LivewireComments;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\ServiceProvider;
 
 class LivewireCommentsServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap the application services.
-     */
+    /** Bootstrap the application services. */
     public function boot()
     {
         /*
@@ -53,9 +53,7 @@ class LivewireCommentsServiceProvider extends ServiceProvider
         }
     }
 
-    /**
-     * Register the application services.
-     */
+    /** Register the application services. */
     public function register()
     {
         // Automatically apply the package configuration
@@ -66,7 +64,7 @@ class LivewireCommentsServiceProvider extends ServiceProvider
         });
 
         Gate::policy(\Centrex\LivewireComments\Models\Comment::class, CommentPolicy::class);
-        
+
         // Register the main class to use with the facade
         $this->app->singleton('livewire-comments', function () {
             return new LivewireComments;

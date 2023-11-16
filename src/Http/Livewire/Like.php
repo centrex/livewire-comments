@@ -1,7 +1,8 @@
 <?php
 
-namespace Centrex\LivewireComments\Http\Livewire;
+declare(strict_types=1);
 
+namespace Centrex\LivewireComments\Http\Livewire;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -10,10 +11,8 @@ use Livewire\Component;
 
 class Like extends Component
 {
-
     public $comment;
     public $count;
-
 
     public function mount(\Centrex\LivewireComments\Models\Comment $comment): void
     {
@@ -25,6 +24,7 @@ class Like extends Component
     {
         $ip = request()->ip();
         $userAgent = request()->userAgent();
+
         if ($this->comment->isLiked()) {
             $this->comment->removeLike();
 
@@ -37,7 +37,7 @@ class Like extends Component
             $this->count++;
         } elseif ($ip && $userAgent) {
             $this->comment->likes()->create([
-                'ip' => $ip,
+                'ip'         => $ip,
                 'user_agent' => $userAgent,
             ]);
 
@@ -45,13 +45,8 @@ class Like extends Component
         }
     }
 
-    /**
-     * @return Factory|Application|View|\Illuminate\Contracts\Foundation\Application|null
-     */
     public function render(
-    ): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application|null
-    {
+    ): Factory|Application|View|\Illuminate\Contracts\Foundation\Application|null {
         return view('livewire-comments::livewire.like');
     }
-
 }

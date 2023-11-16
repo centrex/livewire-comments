@@ -1,7 +1,8 @@
 <?php
 
-namespace Centrex\LivewireComments\Http\Livewire;
+declare(strict_types=1);
 
+namespace Centrex\LivewireComments\Http\Livewire;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -21,42 +22,36 @@ class Comments extends Component
     public $showDropdown = false;
 
     public $newCommentState = [
-        'body' => ''
+        'body' => '',
     ];
 
     protected $listeners = [
-        'refresh' => '$refresh'
+        'refresh' => '$refresh',
     ];
 
     protected $validationAttributes = [
-        'newCommentState.body' => 'comment'
+        'newCommentState.body' => 'comment',
     ];
 
-    /**
-     * @return Factory|Application|View|\Illuminate\Contracts\Foundation\Application|null
-     */
     public function render(
-    ): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application|null
-    {
+    ): Factory|Application|View|\Illuminate\Contracts\Foundation\Application|null {
         $comments = $this->model
             ->comments()
             ->with('user', 'children.user', 'children.children')
             ->parent()
             ->latest()
             ->paginate(config('livewire-comments.pagination_count', 10));
+
         return view('livewire-comments::livewire.comments', [
-            'comments' => $comments
+            'comments' => $comments,
         ]);
     }
 
-    /**
-     * @return void
-     */
     #[On('refresh')]
     public function postComment(): void
     {
         $this->validate([
-            'newCommentState.body' => 'required'
+            'newCommentState.body' => 'required',
         ]);
 
         $comment = $this->model->comments()->make($this->newCommentState);
@@ -64,7 +59,7 @@ class Comments extends Component
         $comment->save();
 
         $this->newCommentState = [
-            'body' => ''
+            'body' => '',
         ];
         $this->users = [];
         $this->showDropdown = false;
@@ -72,5 +67,4 @@ class Comments extends Component
         $this->resetPage();
         session()->flash('message', 'Comment Posted Successfully!');
     }
-
 }

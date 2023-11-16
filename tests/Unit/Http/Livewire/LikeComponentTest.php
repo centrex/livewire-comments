@@ -1,12 +1,13 @@
 <?php
 
-use Livewire\Livewire;
+declare(strict_types=1);
+
 use Centrex\LivewireComments\Http\Livewire\Like;
 use Centrex\LivewireComments\Models\User;
+use Livewire\Livewire;
 
 class LikeComponentTest extends TestCase
 {
-
     public $article;
     public $episode;
     public $comment;
@@ -16,20 +17,20 @@ class LikeComponentTest extends TestCase
         parent::setUp();
 
         $this->article = \ArticleStub::create([
-            'slug' => \Illuminate\Support\Str::slug('Article One')
+            'slug' => \Illuminate\Support\Str::slug('Article One'),
         ]);
         $this->episode = \EpisodeStub::create([
-            'slug' => \Illuminate\Support\Str::slug('Episode One')
+            'slug' => \Illuminate\Support\Str::slug('Episode One'),
         ]);
         $this->user = User::factory()->create();
 
         $this->comment = $this->article->comments()->create([
-            'body' => 'This is a test comment!',
+            'body'             => 'This is a test comment!',
             'commentable_type' => '\ArticleStub',
-            'commentable_id' => $this->article->id,
-            'user_id' => $this->user->id,
-            'parent_id' => null,
-            'created_at' => now()
+            'commentable_id'   => $this->article->id,
+            'user_id'          => $this->user->id,
+            'parent_id'        => null,
+            'created_at'       => now(),
         ]);
     }
 

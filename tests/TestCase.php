@@ -1,15 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
+use Centrex\LivewireComments\Providers\CommentifyServiceProvider;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
 use Livewire\LivewireServiceProvider;
-use Centrex\LivewireComments\Providers\CommentifyServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
-     * @param $app
      * @return string[]
      */
     protected function getPackageProviders($app): array
@@ -20,9 +20,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         ];
     }
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -30,13 +27,10 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
         $this->artisan('migrate', [
             '--database' => 'testbench',
-            '--realpath' => realpath(__DIR__.'/../database/migrations')
+            '--realpath' => realpath(__DIR__.'/../database/migrations'),
         ]);
     }
 
-    /**
-     * @return void
-     */
     public function tearDown(): void
     {
         Schema::drop('articles');
@@ -44,19 +38,14 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         Schema::drop('comments');
     }
 
-    /**
-     * @param $app
-     * @return void
-     */
     protected function getEnvironmentSetUp($app): void
     {
         $app['config']->set('database.default', 'testbench');
         $app['config']->set('database.connections.testbench', [
-            'driver' => 'sqlite',
+            'driver'   => 'sqlite',
             'database' => ':memory:',
-            'prefix' => ''
+            'prefix'   => '',
         ]);
-
 
         Schema::create('users', function ($table) {
             $table->increments('id');
@@ -79,5 +68,4 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             $table->timestamps();
         });
     }
-
 }

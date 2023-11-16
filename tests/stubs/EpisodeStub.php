@@ -1,7 +1,8 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Database\Eloquent\Model;
-use Centrex\LivewireComments\Scopes\CommentScopes;
 
 class EpisodeStub extends Model
 {
@@ -10,5 +11,4 @@ class EpisodeStub extends Model
     protected $connection = 'testbench';
 
     public $table = 'episodes';
-
 }

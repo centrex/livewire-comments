@@ -1,20 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Centrex\LivewireComments\Policies;
 
+use Centrex\LivewireComments\Models\Comment;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Auth\Access\Response;
-use Centrex\LivewireComments\Models\Comment;
 
 class CommentPolicy
 {
     use HandlesAuthorization;
 
-    /**
-     * @param $user
-     * @param  Comment  $comment
-     * @return Response
-     */
     public function update($user, Comment $comment): Response
     {
         return $user->id === $comment->user_id
@@ -22,12 +19,6 @@ class CommentPolicy
             : Response::denyWithStatus(401);
     }
 
-
-    /**
-     * @param $user
-     * @param  Comment  $comment
-     * @return Response
-     */
     public function destroy($user, Comment $comment): Response
     {
         return $user->id === $comment->user_id

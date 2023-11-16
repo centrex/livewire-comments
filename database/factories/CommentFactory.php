@@ -1,12 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Centrex\LivewireComments\Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use Centrex\LivewireComments\Models\Comment;
 use Centrex\LivewireComments\Models\User;
-
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CommentFactory extends Factory
 {
@@ -20,14 +20,14 @@ class CommentFactory extends Factory
     public function definition(): array
     {
         return [
-            'body' => fake()->text,
+            'body'    => fake()->text,
             'user_id' => function () {
                 return User::factory()->create()->id;
             },
-            'parent_id' => null,
+            'parent_id'        => null,
             'commentable_type' => '\ArticleStub',
-            'commentable_id' => 1,
-            'created_at' => now()
+            'commentable_id'   => 1,
+            'created_at'       => now(),
         ];
     }
 }
