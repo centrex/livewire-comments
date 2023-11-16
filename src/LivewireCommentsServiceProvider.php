@@ -6,6 +6,11 @@ namespace Centrex\LivewireComments;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
+use Centrex\LivewireComments\Http\Livewire\Comment;
+use Centrex\LivewireComments\Http\Livewire\Comments;
+use Centrex\LivewireComments\Http\Livewire\Like;
+use Centrex\LivewireComments\Policies\CommentPolicy;
 
 class LivewireCommentsServiceProvider extends ServiceProvider
 {
