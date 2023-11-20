@@ -36,24 +36,16 @@ You can install the package via composer:
 composer require centrex/livewire-comments
 ```
 
-You can publish and run the migrations with:
+You can run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="livewire-comments-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="livewire-comments-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
+php artisan vendor:publish --tag="comments-config"
 ```
 
 you can publish `tailwind.config.js` file, 
@@ -117,9 +109,10 @@ Please review [our security policy](../../security/policy) on how to report secu
 - [Tailwind](https://tailwindcss.com/)
 - [Livewire](https://laravel-livewire.com/)
 - [FlowBite](https://flowbite.com)
-- [commentify](https://github.com/usamamuneerchaudhary/commentify/)
+
 - [centrex](https://github.com/centrex)
 - [All Contributors](../../contributors)
+- [commentify](https://github.com/usamamuneerchaudhary/commentify/)
 
 ## License
 
