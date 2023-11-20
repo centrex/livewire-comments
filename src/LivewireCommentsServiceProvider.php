@@ -32,7 +32,7 @@ class LivewireCommentsServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('livewire-comments.php'),
-            ], 'config');
+            ], 'livewire-comments-config');
 
             $this->publishes([
                 __DIR__.'/../../tailwind.config.js' => base_path('tailwind.config.js'),
@@ -41,17 +41,17 @@ class LivewireCommentsServiceProvider extends ServiceProvider
             // Publishing the views.
             /*$this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/livewire-comments'),
-            ], 'views');*/
+            ], 'livewire-comments-views');*/
 
             // Publishing assets.
             /*$this->publishes([
                 __DIR__.'/../resources/assets' => public_path('vendor/livewire-comments'),
-            ], 'assets');*/
+            ], 'livewire-comments-assets');*/
 
             // Publishing the translation files.
             /*$this->publishes([
                 __DIR__.'/../resources/lang' => resource_path('lang/vendor/livewire-comments'),
-            ], 'lang');*/
+            ], 'livewire-comments-lang');*/
 
             // Registering package commands.
             // $this->commands([]);
