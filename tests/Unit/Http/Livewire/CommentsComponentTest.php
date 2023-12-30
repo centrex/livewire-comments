@@ -1,16 +1,17 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 use Centrex\LivewireComments\Http\Livewire\Comments;
-use Centrex\LivewireComments\Models\Comment;
-use Centrex\LivewireComments\Models\User;
+use Centrex\LivewireComments\Models\{Comment, User};
 use Livewire\Livewire;
 
 class CommentsComponentTest extends TestCase
 {
     public $article;
+
     public $episode;
+
     public $comment;
 
     public function setUp(): void

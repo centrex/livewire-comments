@@ -1,28 +1,28 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace Centrex\LivewireComments\Http\Livewire;
 
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
+use Illuminate\Contracts\View\{Factory, View};
 use Illuminate\Foundation\Application;
 use Livewire\Component;
 
 class Like extends Component
 {
     public $comment;
+
     public $count;
 
     public function mount(\Centrex\LivewireComments\Models\Comment $comment): void
     {
         $this->comment = $comment;
-        $this->count = $comment->likes_count;
+        $this->count   = $comment->likes_count;
     }
 
     public function like(): void
     {
-        $ip = request()->ip();
+        $ip        = request()->ip();
         $userAgent = request()->userAgent();
 
         if ($this->comment->isLiked()) {

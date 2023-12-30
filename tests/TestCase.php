@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 use Centrex\LivewireComments\Providers\CommentifyServiceProvider;
 use Illuminate\Database\Eloquent\Model;
@@ -25,7 +25,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
         $this->artisan('migrate', [
             '--database' => 'testbench',
-            '--realpath' => realpath(__DIR__.'/../database/migrations'),
+            '--realpath' => realpath(__DIR__ . '/../database/migrations'),
         ]);
     }
 

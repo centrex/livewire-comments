@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace Centrex\LivewireComments;
 
-use Centrex\LivewireComments\Http\Livewire\Comment;
-use Centrex\LivewireComments\Http\Livewire\Comments;
-use Centrex\LivewireComments\Http\Livewire\Like;
+use Centrex\LivewireComments\Http\Livewire\{Comment, Comments, Like};
 use Centrex\LivewireComments\Policies\CommentPolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
@@ -22,8 +20,8 @@ class LivewireCommentsServiceProvider extends ServiceProvider
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'livewire-comments');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'livewire-comments');
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'livewire-comments');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
         Livewire::component('comments', Comments::class);
         Livewire::component('comment', Comment::class);
@@ -31,11 +29,11 @@ class LivewireCommentsServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('livewire-comments.php'),
+                __DIR__ . '/../config/config.php' => config_path('livewire-comments.php'),
             ], 'livewire-comments-config');
 
             $this->publishes([
-                __DIR__.'/../../tailwind.config.js' => base_path('tailwind.config.js'),
+                __DIR__ . '/../../tailwind.config.js' => base_path('tailwind.config.js'),
             ], 'comments-tailwind-config');
 
             // Publishing the views.
@@ -62,17 +60,17 @@ class LivewireCommentsServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'livewire-comments');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'livewire-comments');
 
         $this->app->bind(CommentPolicy::class, function ($app) {
-            return new CommentPolicy;
+            return new CommentPolicy();
         });
 
         Gate::policy(\Centrex\LivewireComments\Models\Comment::class, CommentPolicy::class);
 
         // Register the main class to use with the facade
         $this->app->singleton('livewire-comments', function () {
-            return new LivewireComments;
+            return new LivewireComments();
         });
     }
 }

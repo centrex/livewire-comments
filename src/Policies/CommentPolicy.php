@@ -1,12 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace Centrex\LivewireComments\Policies;
 
 use Centrex\LivewireComments\Models\Comment;
-use Illuminate\Auth\Access\HandlesAuthorization;
-use Illuminate\Auth\Access\Response;
+use Illuminate\Auth\Access\{HandlesAuthorization, Response};
 
 class CommentPolicy
 {

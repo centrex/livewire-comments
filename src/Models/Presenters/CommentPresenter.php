@@ -1,11 +1,10 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace Centrex\LivewireComments\Models\Presenters;
 
-use Centrex\LivewireComments\Models\Comment;
-use Centrex\LivewireComments\Models\User;
+use Centrex\LivewireComments\Models\{Comment, User};
 use Illuminate\Support\HtmlString;
 
 class CommentPresenter
@@ -30,7 +29,7 @@ class CommentPresenter
     public function replaceUserMentions($text): array|string
     {
         preg_match_all('/@([A-Za-z0-9_]+)/', $text, $matches);
-        $usernames = $matches[1];
+        $usernames    = $matches[1];
         $replacements = [];
 
         foreach ($usernames as $username) {
@@ -39,10 +38,10 @@ class CommentPresenter
             if ($user) {
                 $userRoutePrefix = config('commentify.users_route_prefix', 'users');
 
-                $replacements['@'.$username] = '<a href="/'.$userRoutePrefix.'/'.$username.'">@'.$username.
+                $replacements['@' . $username] = '<a href="/' . $userRoutePrefix . '/' . $username . '">@' . $username .
                     '</a>';
             } else {
-                $replacements['@'.$username] = '@'.$username;
+                $replacements['@' . $username] = '@' . $username;
             }
         }
 

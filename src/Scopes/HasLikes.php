@@ -1,11 +1,10 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace Centrex\LivewireComments\Scopes;
 
-use Centrex\LivewireComments\Models\CommentLike;
-use Centrex\LivewireComments\Models\User;
+use Centrex\LivewireComments\Models\{CommentLike, User};
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 trait HasLikes
@@ -18,7 +17,7 @@ trait HasLikes
     /** @return false|int */
     public function isLiked(): bool|int
     {
-        $ip = request()->ip();
+        $ip        = request()->ip();
         $userAgent = request()->userAgent();
 
         if (auth()->user()) {
@@ -36,7 +35,7 @@ trait HasLikes
 
     public function removeLike(): bool
     {
-        $ip = request()->ip();
+        $ip        = request()->ip();
         $userAgent = request()->userAgent();
 
         if (auth()->user()) {

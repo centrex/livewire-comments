@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace Centrex\LivewireComments\Models;
 
@@ -11,7 +11,8 @@ use Illuminate\Foundation\Auth\User as BaseUser;
 
 class User extends BaseUser
 {
-    use HasFactory, HasUserAvatar;
+    use HasFactory;
+    use HasUserAvatar;
 
     /** @var string */
     protected $table = 'users';

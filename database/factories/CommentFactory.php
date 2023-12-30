@@ -1,11 +1,10 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace Centrex\LivewireComments\Database\Factories;
 
-use Centrex\LivewireComments\Models\Comment;
-use Centrex\LivewireComments\Models\User;
+use Centrex\LivewireComments\Models\{Comment, User};
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CommentFactory extends Factory

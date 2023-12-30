@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 use Centrex\LivewireComments\Http\Livewire\Like;
 use Centrex\LivewireComments\Models\User;
@@ -9,7 +9,9 @@ use Livewire\Livewire;
 class LikeComponentTest extends TestCase
 {
     public $article;
+
     public $episode;
+
     public $comment;
 
     public function setUp(): void

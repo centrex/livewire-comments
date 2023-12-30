@@ -1,16 +1,17 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 use Centrex\LivewireComments\Http\Livewire\Comment as LivewireComment;
-use Centrex\LivewireComments\Models\Comment;
-use Centrex\LivewireComments\Models\User;
+use Centrex\LivewireComments\Models\{Comment, User};
 use Livewire\Livewire;
 
 class CommentComponentTest extends TestCase
 {
     public $article;
+
     public $episode;
+
     public $comment;
 
     public function setUp(): void
@@ -137,7 +138,7 @@ class CommentComponentTest extends TestCase
     /** @test */
     public function only_authorized_users_can_edit_comments()
     {
-        $user = User::factory()->create();
+        $user    = User::factory()->create();
         $comment = Comment::factory()->create([
             'user_id' => $user->id,
         ]);
@@ -152,7 +153,7 @@ class CommentComponentTest extends TestCase
     /** @test */
     public function only_authorized_users_can_delete_comments()
     {
-        $user = User::factory()->create();
+        $user    = User::factory()->create();
         $comment = Comment::factory()->create([
             'user_id' => $user->id,
         ]);

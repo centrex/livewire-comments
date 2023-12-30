@@ -1,10 +1,9 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-use Centrex\LivewireComments\Models\Comment;
 use Centrex\LivewireComments\Models\Presenters\CommentPresenter;
-use Centrex\LivewireComments\Models\User;
+use Centrex\LivewireComments\Models\{Comment, User};
 use Illuminate\Support\HtmlString;
 
 class CommentPresenterTest extends TestCase
@@ -42,7 +41,7 @@ class CommentPresenterTest extends TestCase
         $expectedOutput = 'This is a test comment';
         $this->assertEquals(
             new HtmlString(app('markdown')->convertToHtml($expectedOutput)),
-            $this->commentPresenter->markdownBody()
+            $this->commentPresenter->markdownBody(),
         );
     }
 

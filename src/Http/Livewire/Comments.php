@@ -1,15 +1,13 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace Centrex\LivewireComments\Http\Livewire;
 
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
+use Illuminate\Contracts\View\{Factory, View};
 use Illuminate\Foundation\Application;
 use Livewire\Attributes\On;
-use Livewire\Component;
-use Livewire\WithPagination;
+use Livewire\{Component, WithPagination};
 
 class Comments extends Component
 {
@@ -61,7 +59,7 @@ class Comments extends Component
         $this->newCommentState = [
             'body' => '',
         ];
-        $this->users = [];
+        $this->users        = [];
         $this->showDropdown = false;
 
         $this->resetPage();

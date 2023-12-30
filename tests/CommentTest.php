@@ -1,13 +1,13 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-use Centrex\LivewireComments\Models\Comment;
-use Centrex\LivewireComments\Models\User;
+use Centrex\LivewireComments\Models\{Comment, User};
 
 class CommentTest extends TestCase
 {
     public $article;
+
     public $comment;
 
     public function setUp(): void
@@ -32,7 +32,7 @@ class CommentTest extends TestCase
     /** @test */
     public function comment_can_be_persisted_in_database()
     {
-        $user = User::factory()->create();
+        $user    = User::factory()->create();
         $comment = Comment::factory()->create([
             'user_id' => $user->id,
         ]);
@@ -46,7 +46,7 @@ class CommentTest extends TestCase
     /** @test */
     public function comment_has_user_relation()
     {
-        $user = User::factory()->create();
+        $user    = User::factory()->create();
         $comment = Comment::factory()->create([
             'user_id' => $user->id,
         ]);
