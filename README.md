@@ -8,6 +8,18 @@
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
+## Contents
+
+- [Some Features Highlight](#some-features-highlight)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage Examples](#usage)
+- [Testing](#testing)
+- [Changelog](#changelog)
+- [Contributing](#contributing)
+- [Credits](#credits)
+- [License](#license)
+
 ## Some Features Highlight
 
 - Easy to integrate
@@ -58,6 +70,7 @@ php artisan vendor:publish --tag="comments-tailwind-config"
 ```
 
 ## Usage
+
 In your model, where you want to integrate comments, simply add the `Commentable` trait in that model.
 For example: 
 ```php
@@ -120,10 +133,6 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
-
 ## Credits
 
 - [Laravel](https://laravel.com)
@@ -137,4 +146,4 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
