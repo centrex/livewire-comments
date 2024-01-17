@@ -18,8 +18,8 @@ class CommentPresenterTest extends TestCase
     {
         parent::setUp();
 
-        $this->article = \ArticleStub::create([
-            'slug' => \Illuminate\Support\Str::slug('Article One'),
+        $this->article = ArticleStub::create([
+            'slug' => Illuminate\Support\Str::slug('Article One'),
         ]);
         $this->user = User::factory()->create();
 

@@ -66,7 +66,7 @@ class LivewireCommentsServiceProvider extends ServiceProvider
             return new CommentPolicy();
         });
 
-        Gate::policy(\Centrex\LivewireComments\Models\Comment::class, CommentPolicy::class);
+        Gate::policy(Models\Comment::class, CommentPolicy::class);
 
         // Register the main class to use with the facade
         $this->app->singleton('livewire-comments', function () {

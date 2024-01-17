@@ -52,7 +52,7 @@ class Comment extends Component
         ];
     }
 
-    /** @throws \Illuminate\Auth\Access\AuthorizationException */
+    /** @throws AuthorizationException */
     public function editComment(): void
     {
         $this->authorize('update', $this->comment);

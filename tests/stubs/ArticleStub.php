@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ArticleStub extends Model
 {
-    use \Centrex\LivewireComments\Traits\Commentable;
+    use Centrex\LivewireComments\Traits\Commentable;
 
     protected $connection = 'testbench';
 

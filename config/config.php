@@ -1,10 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
-/*
- * You can place your custom package configuration in here.
- */
 return [
     'users_route_prefix' => 'users', //set this prefix to anything that you wish to use for users profile routes
     'pagination_count'   => 10,

@@ -18,11 +18,11 @@ class CommentComponentTest extends TestCase
     {
         parent::setUp();
 
-        $this->article = \ArticleStub::create([
-            'slug' => \Illuminate\Support\Str::slug('Article One'),
+        $this->article = ArticleStub::create([
+            'slug' => Illuminate\Support\Str::slug('Article One'),
         ]);
-        $this->episode = \EpisodeStub::create([
-            'slug' => \Illuminate\Support\Str::slug('Episode One'),
+        $this->episode = EpisodeStub::create([
+            'slug' => Illuminate\Support\Str::slug('Episode One'),
         ]);
         $this->user = User::factory()->create();
 
@@ -40,7 +40,7 @@ class CommentComponentTest extends TestCase
     public function it_can_edit_a_comment()
     {
         $this->actingAs($this->user);
-        Livewire::test(\Centrex\LivewireComments\Http\Livewire\Comments::class, [
+        Livewire::test(Centrex\LivewireComments\Http\Livewire\Comments::class, [
             'model' => $this->article,
         ])
             ->set('newCommentState.body', $this->comment->body)
