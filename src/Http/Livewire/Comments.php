@@ -59,7 +59,7 @@ class Comments extends Component
         $this->newCommentState = [
             'body' => '',
         ];
-        $this->users        = [];
+        $this->users = [];
         $this->showDropdown = false;
 
         $this->resetPage();

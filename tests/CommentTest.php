@@ -32,7 +32,7 @@ class CommentTest extends TestCase
     /** @test */
     public function comment_can_be_persisted_in_database()
     {
-        $user    = User::factory()->create();
+        $user = User::factory()->create();
         $comment = Comment::factory()->create([
             'user_id' => $user->id,
         ]);
@@ -46,7 +46,7 @@ class CommentTest extends TestCase
     /** @test */
     public function comment_has_user_relation()
     {
-        $user    = User::factory()->create();
+        $user = User::factory()->create();
         $comment = Comment::factory()->create([
             'user_id' => $user->id,
         ]);

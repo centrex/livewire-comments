@@ -29,7 +29,7 @@ class CommentPresenter
     public function replaceUserMentions($text): array|string
     {
         preg_match_all('/@([A-Za-z0-9_]+)/', $text, $matches);
-        $usernames    = $matches[1];
+        $usernames = $matches[1];
         $replacements = [];
 
         foreach ($usernames as $username) {

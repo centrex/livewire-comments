@@ -60,7 +60,7 @@ class Comment extends Component
             'editState.body' => 'required|min:2',
         ]);
         $this->comment->update($this->editState);
-        $this->isEditing   = false;
+        $this->isEditing = false;
         $this->showOptions = false;
     }
 
@@ -94,7 +94,7 @@ class Comment extends Component
         $this->replyState = [
             'body' => '',
         ];
-        $this->isReplying  = false;
+        $this->isReplying = false;
         $this->showOptions = false;
         $this->dispatch('refresh')->self();
     }

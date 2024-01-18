@@ -17,7 +17,7 @@ trait HasLikes
     /** @return false|int */
     public function isLiked(): bool|int
     {
-        $ip        = request()->ip();
+        $ip = request()->ip();
         $userAgent = request()->userAgent();
 
         if (auth()->user()) {
@@ -35,7 +35,7 @@ trait HasLikes
 
     public function removeLike(): bool
     {
-        $ip        = request()->ip();
+        $ip = request()->ip();
         $userAgent = request()->userAgent();
 
         if (auth()->user()) {

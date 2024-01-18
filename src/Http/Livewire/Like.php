@@ -17,12 +17,12 @@ class Like extends Component
     public function mount(\Centrex\LivewireComments\Models\Comment $comment): void
     {
         $this->comment = $comment;
-        $this->count   = $comment->likes_count;
+        $this->count = $comment->likes_count;
     }
 
     public function like(): void
     {
-        $ip        = request()->ip();
+        $ip = request()->ip();
         $userAgent = request()->userAgent();
 
         if ($this->comment->isLiked()) {
