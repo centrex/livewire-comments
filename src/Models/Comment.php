@@ -8,8 +8,8 @@ use Centrex\LivewireComments\Database\Factories\CommentFactory;
 use Centrex\LivewireComments\Models\Presenters\CommentPresenter;
 use Centrex\LivewireComments\Scopes\{CommentScopes, HasLikes};
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\{BelongsTo, HasMany, MorphTo};
 use Illuminate\Database\Eloquent\{Model, SoftDeletes};
+use Illuminate\Database\Eloquent\Relations\{BelongsTo, HasMany, MorphTo};
 
 class Comment extends Model
 {

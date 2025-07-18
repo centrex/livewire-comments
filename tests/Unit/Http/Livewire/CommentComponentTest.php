@@ -8,13 +8,15 @@ use Livewire\Livewire;
 
 class CommentComponentTest extends TestCase
 {
+    public $user;
+
     public $article;
 
     public $episode;
 
     public $comment;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -37,7 +39,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_edit_a_comment()
+    public function it_can_edit_a_comment(): void
     {
         $this->actingAs($this->user);
         Livewire::test(Centrex\LivewireComments\Http\Livewire\Comments::class, [
@@ -56,7 +58,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function only_authenticated_user_can_edit_a_comment()
+    public function only_authenticated_user_can_edit_a_comment(): void
     {
         Livewire::test(LivewireComment::class, [
             'comment' => $this->comment,
@@ -66,7 +68,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_reply_to_a_comment()
+    public function it_can_reply_to_a_comment(): void
     {
         $this->actingAs($this->user);
         $reply = $this->comment->children()->make([
@@ -88,7 +90,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_only_edit_to_a_comment_if_owner()
+    public function it_can_only_edit_to_a_comment_if_owner(): void
     {
         $this->actingAs($this->user);
 
@@ -103,7 +105,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_not_edit_a_comment_if_owned_by_another_user()
+    public function it_can_not_edit_a_comment_if_owned_by_another_user(): void
     {
         $newUser = User::factory()->create();
         $this->actingAs($newUser);
@@ -119,7 +121,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_only_delete_a_comment_if_owner()
+    public function it_can_only_delete_a_comment_if_owner(): void
     {
         $this->actingAs($this->user);
 
@@ -136,7 +138,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function only_authorized_users_can_edit_comments()
+    public function only_authorized_users_can_edit_comments(): void
     {
         $user = User::factory()->create();
         $comment = Comment::factory()->create([
@@ -151,7 +153,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function only_authorized_users_can_delete_comments()
+    public function only_authorized_users_can_delete_comments(): void
     {
         $user = User::factory()->create();
         $comment = Comment::factory()->create([
@@ -165,7 +167,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_show_reply_boxes_for_child_comments()
+    public function it_can_show_reply_boxes_for_child_comments(): void
     {
         $this->actingAs($this->user);
         $childComment = Comment::factory()->create([
@@ -179,10 +181,10 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_mention_users_in_reply()
+    public function it_can_mention_users_in_reply(): void
     {
         $this->actingAs($this->user);
-        $user = User::factory()->create([
+        User::factory()->create([
             'name' => 'Usama Munir',
         ]);
         $childComment = Comment::factory()->create([
@@ -201,10 +203,10 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_mention_users_when_editing_a_child_comment()
+    public function it_can_mention_users_when_editing_a_child_comment(): void
     {
         $this->actingAs($this->user);
-        $user = User::factory()->create([
+        User::factory()->create([
             'name' => 'Usama Munir',
         ]);
         $childComment = Comment::factory()->create([
@@ -223,10 +225,10 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_mention_users_when_editing_a_comment()
+    public function it_can_mention_users_when_editing_a_comment(): void
     {
         $this->actingAs($this->user);
-        $user = User::factory()->create([
+        User::factory()->create([
             'name' => 'Usama Munir',
         ]);
 
@@ -242,7 +244,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_edit_comment()
+    public function it_can_edit_comment(): void
     {
         $this->actingAs($this->user);
         Livewire::test(LivewireComment::class, ['comment' => $this->comment])
@@ -253,7 +255,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_delete_comment()
+    public function it_can_delete_comment(): void
     {
         $this->actingAs($this->user);
         $this->assertNotNull($this->comment);
@@ -266,7 +268,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_shows_validation_error_on_edit_submit_if_required_fields_empty()
+    public function it_shows_validation_error_on_edit_submit_if_required_fields_empty(): void
     {
         $this->actingAs($this->user);
         Livewire::test(LivewireComment::class, ['comment' => $this->comment])
@@ -277,7 +279,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_shows_validation_error_on_reply_post_if_body_empty()
+    public function it_shows_validation_error_on_reply_post_if_body_empty(): void
     {
         Livewire::test(LivewireComment::class, ['comment' => $this->comment])
             ->set('isReplying', true)
@@ -287,23 +289,23 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_renders_livewire_component_correctly()
+    public function it_renders_livewire_component_correctly(): void
     {
         $this->actingAs($this->user);
 
-        $view = Livewire::test(LivewireComment::class, ['comment' => $this->comment])
+        Livewire::test(LivewireComment::class, ['comment' => $this->comment])
             ->assertViewIs('commentify::livewire.comment')
             ->assertViewHas('comment');
     }
 
     /** @test */
-    public function can_search_for_users_for_mentioning()
+    public function can_search_for_users_for_mentioning(): void
     {
         $this->actingAs($this->user);
         $user1 = User::factory()->create([
             'name' => 'Usama Munir',
         ]);
-        $user2 = User::factory()->create([
+        User::factory()->create([
             'name' => 'John Doe',
         ]);
         Livewire::test(LivewireComment::class, ['comment' => $this->comment])
@@ -313,7 +315,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_should_not_set_edit_state_if_not_editing()
+    public function it_should_not_set_edit_state_if_not_editing(): void
     {
         $this->actingAs($this->user);
 
@@ -326,7 +328,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_should_not_set_reply_state_if_not_replying()
+    public function it_should_not_set_reply_state_if_not_replying(): void
     {
         $this->actingAs($this->user);
 
@@ -339,7 +341,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_should_only_post_reply_if_parent_comment()
+    public function it_should_only_post_reply_if_parent_comment(): void
     {
         $this->actingAs($this->user);
         $reply = $this->comment->children()->make([

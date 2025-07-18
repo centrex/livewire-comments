@@ -9,12 +9,7 @@ use Illuminate\Support\HtmlString;
 
 class CommentPresenter
 {
-    public Comment $comment;
-
-    public function __construct(Comment $comment)
-    {
-        $this->comment = $comment;
-    }
+    public function __construct(public Comment $comment) {}
 
     public function markdownBody(): HtmlString
     {
@@ -28,7 +23,7 @@ class CommentPresenter
 
     public function replaceUserMentions($text): array|string
     {
-        preg_match_all('/@([A-Za-z0-9_]+)/', $text, $matches);
+        preg_match_all('/@(\w+)/', (string) $text, $matches);
         $usernames = $matches[1];
         $replacements = [];
 

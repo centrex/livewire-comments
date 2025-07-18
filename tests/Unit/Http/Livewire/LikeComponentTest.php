@@ -8,13 +8,15 @@ use Livewire\Livewire;
 
 class LikeComponentTest extends TestCase
 {
+    public $user;
+
     public $article;
 
     public $episode;
 
     public $comment;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -37,7 +39,7 @@ class LikeComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_like_comment()
+    public function it_can_like_comment(): void
     {
         Livewire::test(Like::class, ['comment' => $this->comment, 'count' => 0])
             ->call('like')
@@ -45,7 +47,7 @@ class LikeComponentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_unlike_comment()
+    public function it_can_unlike_comment(): void
     {
         $this->comment->likes()->create(['user_id' => 1]);
 
@@ -55,7 +57,7 @@ class LikeComponentTest extends TestCase
     }
 
     /** @test */
-    public function auth_users_can_like_comment()
+    public function auth_users_can_like_comment(): void
     {
         $this->actingAs($this->user);
         Livewire::test(Like::class, ['comment' => $this->comment, 'count' => 0])

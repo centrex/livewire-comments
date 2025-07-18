@@ -6,11 +6,16 @@ use Centrex\LivewireComments\Models\{Comment, User};
 
 class CommentTest extends TestCase
 {
+    /**
+     * @var Illuminate\Database\Eloquent\Collection<int, Illuminate\Database\Eloquent\Model>|Illuminate\Database\Eloquent\Model
+     */
+    public $user;
+
     public $article;
 
     public $comment;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -30,7 +35,7 @@ class CommentTest extends TestCase
     }
 
     /** @test */
-    public function comment_can_be_persisted_in_database()
+    public function comment_can_be_persisted_in_database(): void
     {
         $user = User::factory()->create();
         $comment = Comment::factory()->create([
@@ -44,7 +49,7 @@ class CommentTest extends TestCase
     }
 
     /** @test */
-    public function comment_has_user_relation()
+    public function comment_has_user_relation(): void
     {
         $user = User::factory()->create();
         $comment = Comment::factory()->create([
@@ -55,7 +60,7 @@ class CommentTest extends TestCase
     }
 
     /** @test */
-    public function comment_has_children_relation()
+    public function comment_has_children_relation(): void
     {
         $comment = Comment::factory()->create([
             'parent_id' => null,
@@ -69,7 +74,7 @@ class CommentTest extends TestCase
     }
 
     /** @test */
-    public function comment_has_commentable_relation()
+    public function comment_has_commentable_relation(): void
     {
         $this->assertEquals('ArticleStub', $this->comment->commentable_type);
         $this->assertEquals(1, $this->comment->commentable_id);

@@ -13,7 +13,7 @@ use Livewire\Livewire;
 class LivewireCommentsServiceProvider extends ServiceProvider
 {
     /** Bootstrap the application services. */
-    public function boot()
+    public function boot(): void
     {
         /*
          * Optional methods to load your package assets
@@ -57,20 +57,16 @@ class LivewireCommentsServiceProvider extends ServiceProvider
     }
 
     /** Register the application services. */
-    public function register()
+    public function register(): void
     {
         // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'livewire-comments');
 
-        $this->app->bind(CommentPolicy::class, function ($app) {
-            return new CommentPolicy();
-        });
+        $this->app->bind(CommentPolicy::class, fn ($app): CommentPolicy => new CommentPolicy());
 
         Gate::policy(Models\Comment::class, CommentPolicy::class);
 
         // Register the main class to use with the facade
-        $this->app->singleton('livewire-comments', function () {
-            return new LivewireComments();
-        });
+        $this->app->singleton('livewire-comments', fn (): LivewireComments => new LivewireComments());
     }
 }

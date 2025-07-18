@@ -105,7 +105,7 @@ class Comment extends Component
             $this->replyState['body'] = preg_replace(
                 '/@(\w+)$/',
                 '@' . str_replace(' ', '_', Str::lower($userName)) . ' ',
-                $this->replyState['body'],
+                (string) $this->replyState['body'],
             );
             //            $this->replyState['body'] =$userName;
             $this->users = [];
@@ -113,16 +113,16 @@ class Comment extends Component
             $this->editState['body'] = preg_replace(
                 '/@(\w+)$/',
                 '@' . str_replace(' ', '_', Str::lower($userName)) . ' ',
-                $this->editState['body'],
+                (string) $this->editState['body'],
             );
             $this->users = [];
         }
     }
 
     #[On('getUsers')]
-    public function getUsers($searchTerm): void
+    public function getUsers(?string $searchTerm): void
     {
-        if (!empty($searchTerm)) {
+        if ($searchTerm !== null && $searchTerm !== '' && $searchTerm !== '0') {
             $this->users = User::where('name', 'like', '%' . $searchTerm . '%')->take(5)->get();
         } else {
             $this->users = [];

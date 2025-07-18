@@ -18,7 +18,7 @@ abstract class TestCase extends Orchestra\Testbench\TestCase
         ];
     }
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
         Model::unguard();
@@ -29,7 +29,7 @@ abstract class TestCase extends Orchestra\Testbench\TestCase
         ]);
     }
 
-    public function tearDown(): void
+    protected function tearDown(): void
     {
         Schema::drop('articles');
         Schema::drop('episodes');
@@ -45,7 +45,7 @@ abstract class TestCase extends Orchestra\Testbench\TestCase
             'prefix'   => '',
         ]);
 
-        Schema::create('users', function ($table) {
+        Schema::create('users', function ($table): void {
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
@@ -54,13 +54,13 @@ abstract class TestCase extends Orchestra\Testbench\TestCase
             $table->rememberToken();
             $table->timestamps();
         });
-        Schema::create('articles', function ($table) {
+        Schema::create('articles', function ($table): void {
             $table->increments('id');
             $table->string('slug')->unique();
             $table->timestamps();
         });
 
-        Schema::create('episodes', function ($table) {
+        Schema::create('episodes', function ($table): void {
             $table->increments('id');
             $table->string('slug')->unique();
             $table->timestamps();

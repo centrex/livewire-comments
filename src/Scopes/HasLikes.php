@@ -21,7 +21,7 @@ trait HasLikes
         $userAgent = request()->userAgent();
 
         if (auth()->user()) {
-            return User::with('likes')->whereHas('likes', function ($q) {
+            return User::with('likes')->whereHas('likes', function ($q): void {
                 $q->where('comment_id', $this->id);
             })->count();
         }
