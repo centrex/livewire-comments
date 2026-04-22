@@ -1,12 +1,12 @@
 {
-    "name": "centrex/livewire-comments",
-    "description": "Manege comments with livewire in laravel",
+    "name": "centrex/laravel-comments",
+    "description": "Manage comments with livewire in laravel",
     "keywords": [
         "centrex",
         "laravel",
-        "livewire-comments"
+        "laravel-comments"
     ],
-    "homepage": "https://github.com/centrex/livewire-comments",
+    "homepage": "https://github.com/centrex/laravel-comments",
     "license": "MIT",
     "type": "library",
     "authors": [
