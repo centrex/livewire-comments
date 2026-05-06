@@ -16,6 +16,7 @@ class LikeComponentTest extends TestCase
 
     public $comment;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

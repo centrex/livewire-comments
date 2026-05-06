@@ -21,6 +21,7 @@ class CommentPresenterTest extends TestCase
     /** @var CommentPresenter */
     protected $commentPresenter;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Facade;
  */
 class LivewireComments extends Facade
 {
+    #[\Override]
     protected static function getFacadeAccessor()
     {
         return \Centrex\LivewireComments\LivewireComments::class;

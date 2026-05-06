@@ -15,6 +15,7 @@ class CommentTest extends TestCase
 
     public $comment;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
