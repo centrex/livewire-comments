@@ -10,7 +10,7 @@ use Livewire\LivewireServiceProvider;
 abstract class TestCase extends Orchestra\Testbench\TestCase
 {
     /** @return string[] */
-    #[\Override]
+    #[Override]
     protected function getPackageProviders($app): array
     {
         return [
@@ -19,7 +19,7 @@ abstract class TestCase extends Orchestra\Testbench\TestCase
         ];
     }
 
-    #[\Override]
+    #[Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -31,7 +31,7 @@ abstract class TestCase extends Orchestra\Testbench\TestCase
         ]);
     }
 
-    #[\Override]
+    #[Override]
     protected function tearDown(): void
     {
         Schema::drop('articles');
@@ -39,7 +39,7 @@ abstract class TestCase extends Orchestra\Testbench\TestCase
         Schema::drop('comments');
     }
 
-    #[\Override]
+    #[Override]
     protected function getEnvironmentSetUp($app): void
     {
         $app['config']->set('database.default', 'testbench');
